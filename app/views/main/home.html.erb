@@ -1,10 +1,29 @@
-
-
-<div style="" class="">
+<div style="text-align:center" class="">
   <br>
-  <h1>WELCOME </h1>
+  
 </div>
-<% if current_user %>
-  Hello <%= current_user.email %> 
-<% end %>
+<div style="text-align:center">
+  <% if current_user %>
+   <p style="font-size:28px"> Hello <b style="color:orange"> <%= current_user.email %> </b></p>
+  <% end %>
+  <p style="font-size:25px"> Take a look at my latest projects</p>
+</div>
+
+<div style="padding-left:15%; padding-right:15%;">
+
+<% Article.all.each do |article| %>
+
+  <div style="border-radius:30px; text-align:left">
+    <div style="padding:30px">
+     <b style="color:black; text-transform: uppercase;"> <%= article.title %> </b><br>
+     <a href="<%= article.link %>"> <%= article.link %> </a>
+     <p> <br> <%= article.body %> </p>
+    </div>
+  </div>
+  <hr>
+  <% end %>
+</div>
+
+
+
 

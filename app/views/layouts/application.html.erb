@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 
 <style>
-.prova{
-  color:white;
-}
+
 </style>
 
 <html>
@@ -16,7 +14,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body style="">
-  <div style="text-align:center">
+  <div style="text-align:">
     <%= render 'layouts/navbar' %>
     <% if flash[:notice] %>
       <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
