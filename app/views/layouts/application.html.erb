@@ -1,14 +1,22 @@
 <!DOCTYPE html>
+
+<style>
+.prova{
+  color:white;
+}
+</style>
+
 <html>
   <head>
-    <title>Devisefromscratch</title>
+    <title>ruby on rails </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body>
+  <body style="">
+  <div style="text-align:center">
     <%= render 'layouts/navbar' %>
     <% if flash[:notice] %>
       <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
@@ -25,5 +33,6 @@
     <div class="container-fluid">
       <%= yield %>
     </div>
+  </div>
   </body>
 </html>
