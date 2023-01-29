@@ -1,0 +1,15 @@
+<div style="text-align:center" class="">
+  <br>
+  <h1>DASHBOARD </h1>
+</div>
+<div style="text-align:center">
+  <% if current_user %>
+    <p style="font-size:28px"> Hello <b style="color:orange"> <%= current_user.email %> </b></p>
+  <%else%> 
+    <p style="font-size:20px">please <%= link_to "Sign Up", new_user_registration_path %> or 
+    <%= link_to "Sign In", new_user_session_path %> for visit your dashboard </p>
+  <% end %>
+</div>
+
+
+
