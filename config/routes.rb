@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'main#home'
   
   get 'home/dashboard', to: 'main#dashboard'  
+  get 'time_log/:id', to:"time_log#show"
 
   resources :users do
     resources :time_logs

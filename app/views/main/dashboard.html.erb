@@ -27,6 +27,7 @@ table {
         <th>log_date</th>
         <th>note</th>
         <th>user_id</th>
+        <th>read</th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +40,11 @@ table {
         <td><%= timelog.log_date %></td>
         <td><%= timelog.note %></td>
         <td><%= timelog.user_id %></td>
+        <td>
+          <a href="/time_log/<%= timelog.id %>">
+            read
+          </a>
+        </td>
         </tr>
         <% end %>
     </tbody>
