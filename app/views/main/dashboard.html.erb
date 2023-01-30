@@ -25,9 +25,11 @@ table {
         <th>summary</th>
         <th>time_spent</th>
         <th>log_date</th>
-        <th>note</th>
+        <th style="width:30%">note</th>
         <th>user_id</th>
         <th>read</th>
+        <th>edit</th>
+        <th>delete</th>
         </tr>
     </thead>
     <tbody>
@@ -45,11 +47,16 @@ table {
             read
           </a>
         </td>
+        <td> - </td>
+        <td> - </td>
         </tr>
         <% end %>
     </tbody>
     </table>
 </div>
+<br> <br>
+<a href="http://localhost:3000/time_log/new"> create new TimeLog </a>
+<br>
 
   <%else%> 
     <%= image_tag "hello.jpg", height: 400 %>

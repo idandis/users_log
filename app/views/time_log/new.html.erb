@@ -1,0 +1,35 @@
+<h1>New Timelog</h1>
+
+<%= form_with model: @timelog do |form| %>
+<div style="width:50%">
+  <div>
+    <%= form.label :summary %><br>
+    <%= form.text_field :summary, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :note %><br>
+    <%= form.text_area :note, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :log_date%><br>
+    <%= form.text_field :log_date, class:"form-control", value: DateTime.now.strftime("%Y-%m-%d") %>
+  </div>
+
+  <div>
+    <%= form.label :time_spent%><br>
+    <%= form.text_area :time_spent, class:"form-control", value: Time.now.strftime("%H:%M:%S")  %>
+  </div>
+  
+  <div>
+    <%= form.label :user_id%><br>
+    <%= form.text_field :user_id, class:"form-control", value: current_user.id, readonly: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>
+
