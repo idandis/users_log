@@ -1,7 +1,50 @@
 
-<h1><%=@timelog.summary %></h1>
-<p><%= @timelog.note %></p>
-<p><%= @timelog.log_date %></p>
-<p><%= @timelog.time_spent %></p>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-<a class="" href="http://localhost:3000/home/dashboard">turn back to DASHBOARD</a>
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: lightgray;
+  width:20%;
+}
+</style>
+<div style="padding-top:30px">
+<h1>TimeLog </h1><br>
+
+<table id="customers">
+  <tr>
+    <th>Summary</th>
+    <td><%=@timelog.summary %></td>
+  </tr>
+  <tr>
+    <th>Note</th>
+    <td><%= @timelog.note %></td>
+  </tr>
+  <tr>
+    <th>Log Date</th>
+    <td><%= @timelog.log_date %></td>
+  </tr>
+  <tr>
+    <th>Time spent</th>
+    <td><%= @timelog.time_spent %></td>
+  </tr>
+  
+</table>
+</div>
+<br>
+<a class="" href="http://localhost:3000/home/dashboard">< back to DASHBOARD</a>

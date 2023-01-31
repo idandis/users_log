@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'main#home'
   post '/time_log/new', to: 'time_log#create'
   delete '/time_log/:id/destroy', to: 'time_log#destroy'
+  patch '/time_log/:id/edit', to: 'time_log#update'
   get 'home/dashboard', to: 'main#dashboard'  
   #get 'time_log/:id', to:"time_log#show"
   
