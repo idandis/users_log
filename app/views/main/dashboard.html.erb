@@ -11,9 +11,11 @@ table {
 }
 </style>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div style="text-align:center" class="">
   <br>
-  <div style="text-align:left; padding-left:40px; color:gray "><h1>DASHBOARD </h1>
+  <div style="text-align:left; padding-left:40px; color:gray "><h1>DASHBOARD </h1><br>
 </div>
 <div style="text-align:center">
   <% if current_user %>
@@ -35,7 +37,7 @@ table {
     </thead>
     <tbody>
 
-    <% timelogs = TimeLog.where(user_id: current_user.id) %>
+    <% timelogs = TimeLog.where(user_id: current_user.id).order(log_date: :desc) %>
     <% timelogs.each do |timelog| %>
         <tr>
         <td><%= timelog.summary %></td>
