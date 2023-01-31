@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+2.times do 
+    Article.create(title: "this title is generate by seed", body:"the body of this article is generate by seed")
+end
