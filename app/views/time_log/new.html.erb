@@ -5,37 +5,7 @@
 </style>
 
 <div class="col-lg-4 col-md-4 col-sm-4 container justify-content-center" style="width:50%; padding-top:50px">
-<div style="text-align:center"><h1>Create New Timelog</h1></div>
-
-<%= form_with model: @timelog do |form| %>
-  <div>
-    <%= form.label :summary %><br>
-    <%= form.text_field :summary, class:"form-control" %>
-  </div>
-
-  <div>
-    <%= form.label :note %><br>
-    <%= form.text_area :note, class:"form-control" %>
-  </div>
-
-  <div>
-    <%= form.label :log_date%><br>
-    <%= form.text_field :log_date, class:"form-control", value: DateTime.now.strftime("%Y-%m-%d") %>
-  </div>
-
-  <div>
-    <%= form.label :time_spent%><br>
-    <%= form.text_area :time_spent, class:"form-control", value: Time.now.strftime("%H:%M:%S")  %>
-  </div>
-  
-  <div>
-    <%= form.label :user_id%><br>
-    <%= form.text_field :user_id, class:"form-control", value: current_user.id, readonly: true %>
-  </div>
-
-  <div style="text-align:center; padding-top:30px">
-  <%= form.submit "Save TimeLog", class:"btn btn-primary" %>
-  </div>
-<% end %>
+  <div style="text-align:center"><h1>Create New Timelog</h1></div>
+    <%= render "form", timelog: @timelog %>
 </div>
 

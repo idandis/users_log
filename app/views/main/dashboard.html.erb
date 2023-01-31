@@ -48,8 +48,14 @@ table {
             read
           </a>
         </td>
-        <td> - </td>
-        <td> - </td>
+        <td>  <a class="" href="http://localhost:3000/time_log/<%= timelog.id %>/edit"> edit </a> </td>
+        <td> 
+        <% timelogid = timelog.id %>
+        <%= link_to "delete", url_for("http://localhost:3000/time_log/#{timelogid}/destroy"), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %> 
+      </td>
         </tr>
         <% end %>
     </tbody>

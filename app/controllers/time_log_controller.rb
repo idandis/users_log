@@ -12,6 +12,28 @@ class TimeLogController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     end
+
+    def edit
+      @timelog = TimeLog.find(params[:id])
+    end
+  
+    def update
+      @timelog = TimeLog.find(params[:id])
+  
+      if @timelog.update(timelog_params)
+        redirect_to @timelog
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      @timelog = TimeLog.find(params[:id])
+      @timelog.destroy
+
+      redirect_to "/home/dashboard", status: :see_other
+    end
+  
   
     private
       def timelog_params
