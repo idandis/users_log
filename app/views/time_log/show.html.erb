@@ -37,11 +37,11 @@
   </tr>
   <tr>
     <th>Log Date</th>
-    <td><%= @timelog.log_date %></td>
+    <td><%= @timelog.log_date.strftime("%Y-%m-%d") %></td>
   </tr>
   <tr>
     <th>Time spent</th>
-    <td><%= @timelog.time_spent %></td>
+    <td><%= @timelog.time_spent.strftime("%H:%M") %></td>
   </tr>
   
 </table>
