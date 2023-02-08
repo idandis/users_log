@@ -37,7 +37,7 @@ class TimeLogController < ApplicationController
   
     private
       def timelog_params
-        params.permit(:summary, :time_spent, :log_date, :note, :user_id)
+        params.require(:time_log).permit(:summary, :time_spent, :log_date, :note, :user_id)
       end
   end
 
