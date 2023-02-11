@@ -19,8 +19,7 @@ table {
 </div>
 <div style="text-align:center">
   <% if current_user %>
-   <!-- <p style="font-size:28px"> Hello <b style="color:orange"> <%= current_user.email %> </b></p>-->
-    
+ 
     <div style="padding-left:40px;">
     <table>
     <thead>
@@ -66,6 +65,8 @@ table {
 <br> <br>
 <div style="text-align:left; padding-left:40px">
   <a class="btn btn-primary" href="http://localhost:3000/time_log/new"> create new TimeLog </a>
+  
+  <%= link_to "Crea nuovo TimeLog", new_time_log_path %>
 </div>
 <br>
 
