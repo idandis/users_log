@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/time_log/:id/edit', to: 'time_log#edit'
   get 'home/dashboard', to: 'main#dashboard'  
   #get 'time_log/:id', to:"time_log#show"
-  
   resources :time_log
  
   resources :users do

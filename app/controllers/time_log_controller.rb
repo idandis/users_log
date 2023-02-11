@@ -19,7 +19,7 @@ class TimeLogController < ApplicationController
   
     def update
       @timelog = TimeLog.find(params[:id])
-  
+    
       if @timelog.update(timelog_params)
         redirect_to @timelog
       else
@@ -36,9 +36,13 @@ class TimeLogController < ApplicationController
   
   
     private
-      def timelog_params
-        params.require(:time_log).permit(:summary, :time_spent, :log_date, :note, :user_id)
+    def timelog_params
+      if params[:action] == "create"
+        params.permit(:summary, :note, :log_date, :time_spent, :user_id)
+      else
+        params.require(:time_log).permit(:id, :summary, :note, :log_date, :time_spent, :user_id)
       end
+    end
   end
 
 

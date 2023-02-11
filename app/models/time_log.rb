@@ -4,5 +4,5 @@ class TimeLog < ApplicationRecord
   validates :summary, presence: true, length: { maximum: 240 }
   validates :time_spent, presence: true
   validates :log_date, presence: true
-  
+ 
 end
